@@ -31,7 +31,7 @@ class Tasks(models.Model):
 	datetime_end = models.DateTimeField(null=True, blank=True, verbose_name="Время окончания")
 	need_hours = models.FloatField(null=True, blank=True, verbose_name="Необходимое время")
 	spent_hours = models.IntegerField(null=True, blank=True, verbose_name="Затраченое время")
-	in_time = models.BooleanField(verbose_name="Во время?")
+	in_time = models.BooleanField(default=False, verbose_name="Во время?")
 	comments = models.TextField(null="True", blank="True", verbose_name="Комментарии")
 	
 	class Meta:
