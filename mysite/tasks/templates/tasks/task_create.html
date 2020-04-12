@@ -4,8 +4,27 @@
 
 		<form method="POST" action="." enctype="multipart/form-data">
 			{% csrf_token %}
-			{{ form.as_p }}
-			<input type="submit" name="submit">
+			<div class="creation-form">
+				<h2>Create Task</h2>
+					<div class="username">
+						<span><i>Пользователь</i></span>
+						{{ form.user }}
+					</div>
+					<div class="title">
+						<span><i>Заголовок</i></span>
+						{{ form.title }}
+					</div>
+					<div class="need_hours">
+						<span><i>Оценка трудозатрат</i></span>
+						{{ form.need_hours }}
+					</div>
+					<div class="comment">
+						<span><i>Комментарии</i></span>
+						<textarea class="form-control" name="comments">{{ form.comment }}</textarea>
+					</div>
+				<input type="submit" name="create-button" class="create-button" value="Create">
+			</div>
+			<!-- {{ form.as_p }} -->
 		</form>
 		
 {% endblock %}

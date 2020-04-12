@@ -297,11 +297,108 @@ body .login_fields__submit input:hover {
 		right: 0;
 	}
 }
-
-
-
-
-
-
-
 /* END HEADER */
+
+/* Creation form */
+.creation-form{
+  height: 500px;
+  width: 450px;
+  background: #333333;
+  padding: 50px 45px;
+  text-align: center;
+  margin: auto;
+  margin-top: 5%;
+  color: white;
+  font-family: 'Century Gothic',sans-serif;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.creation-form h2{
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-weight: 100;
+}
+
+.creation-form, .username, .title
+, .need_hours, .comment{
+  float: left;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+select, input, textarea{
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+.create-button{
+  width: 70%;
+  margin: 20px auto 0;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px;
+  text-align: center;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.5s;
+  color: white;
+}
+
+
+.create-button:hover{
+  background: #3caa3c;
+  transition: 0.5s;
+}
+/* End creation-form */
+
+/* Task form */
+#task-form{
+  height: 100px;
+  width: 200px;
+  background: #333333;
+  color: white;
+  font-family: 'Century Gothic',sans-serif;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 10px 10px 10px;
+  padding: 10px 0;
+  display: inline-block;
+}
+
+#task-form, .btn-upd, .btn-del{
+  padding: 5px;
+  margin-top: 10px;
+  text-align: center; 
+}
+
+.btn-upd, .btn-del{
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
+.btn-upd, .btn-del, a{
+  color: white;
+  float: left;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.btn-upd:hover{
+  background: #c34d0a;
+}
+
+.btn-del:hover{
+  background: #cb2821;
+}
+/* End task-form */

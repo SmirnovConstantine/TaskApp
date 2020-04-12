@@ -43,7 +43,6 @@ def loginPage(request):
 		context = {}
 		return render(request, 'accounts/login.html', context)
 
-
 def logoutUser(request):
 	logout(request)
 	return redirect('accounts:login')
@@ -51,3 +50,7 @@ def logoutUser(request):
 def homePage(request):
 	context = {}
 	return render(request, 'base.html', context)
+
+
+
+	
