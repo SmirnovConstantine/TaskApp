@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import TaskModelForm
 from .models import Tasks
@@ -31,3 +31,31 @@ def delete_view(request, pk):
 			item_to_delete[0].delete() 
 	return redirect('tasks:tasks_list')
 
+def update_view(request, pk):
+	item_to_update = get_object_or_404(Tasks, pk=pk)
+	form = TaskModelForm(request.POST or None, instance=item_to_update)
+	if form.is_valid():
+		form.instance.user = request.user
+		form.save()
+		return redirect('tasks:tasks_list')
+
+	context = {
+		'form': form,
+	}
+
+	return render(request, 'tasks/task_create.html', context)
+
+
+def list_view_for_user(request, user):
+	item_for_user = Tasks.objects.filter(user=request.user)
+	context = {
+		'item_for_user': item_for_user, 
+	}
+	return render(request, 'tasks/list_for_user.html', context)
+
+def task_run_view(request, pk):
+	item_to_run = Tasks.objects.filter(pk=pk)
+	context = {
+		'item_to_run': item_to_run,
+	}
+	return render(request, 'tasks/run.html', context)

@@ -11,7 +11,6 @@
 from django.db import models
 from django.conf import settings
 
-
 # Модели заданий содержит, 
 #  1 - user -> ссылка на пользователя, который выполняет задачу
 #  2 - title -> название задачи
@@ -32,7 +31,8 @@ class Tasks(models.Model):
 	need_hours = models.FloatField(null=True, blank=True, verbose_name="Необходимое время")
 	spent_hours = models.IntegerField(null=True, blank=True, verbose_name="Затраченое время")
 	in_time = models.BooleanField(default=False, verbose_name="Во время?")
-	comments = models.TextField(null="True", blank="True", verbose_name="Комментарии")
+	comments = models.TextField(null=True, blank=True, verbose_name="Комментарии")
+	closed = models.BooleanField(null=True, blank=True, verbose_name="Закрыта ли задача")
 	
 	class Meta:
 		verbose_name = "Задание"
@@ -47,4 +47,5 @@ class Tasks(models.Model):
 	def get_update_url(self):
 		return "/tasks/{}/update".format(self.pk)
 
-
+	def get_run_url(self):
+		return "/tasks/my_task/{}/run".format(self.pk)

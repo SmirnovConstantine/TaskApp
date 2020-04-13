@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+		<h2>My tasks</h2>
+	<div class="list-form">
+		<ul>
+			{% for item in item_for_user %}
+				{% if item.closed is not True %}
+				<li>
+					<div id="task-form">
+						<div class="task-title"><h3>{{ item.title }}<h3></div>
+						<div class="task-intime"><p>Во время? {{ item.in_time }}</p></div>
+						<div class="task-need_hours"><p>Оценка трудозатрат. {{ item.need_hours }}</p></div>
+						<div class="task-user"><p>Кто делает. {{ item.user }}</p></div>
+						<a href="{{ item.get_run_url }}">
+							<button class="btn-run">Run</button>
+						</a>
+					</div>
+				</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+
+{% endblock %}
