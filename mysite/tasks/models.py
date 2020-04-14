@@ -32,7 +32,7 @@ class Tasks(models.Model):
 	spent_hours = models.IntegerField(null=True, blank=True, verbose_name="Затраченое время")
 	in_time = models.BooleanField(default=False, verbose_name="Во время?")
 	comments = models.TextField(null=True, blank=True, verbose_name="Комментарии")
-	closed = models.BooleanField(null=True, blank=True, verbose_name="Закрыта ли задача")
+	closed = models.BooleanField(default=False, null=True, blank=True, verbose_name="Закрыта ли задача")
 	
 	class Meta:
 		verbose_name = "Задание"
@@ -49,3 +49,6 @@ class Tasks(models.Model):
 
 	def get_run_url(self):
 		return "/tasks/my_task/{}/run".format(self.pk)
+
+	def get_close_url(self):
+		return "/tasks/my_task/{}/close".format(self.pk)

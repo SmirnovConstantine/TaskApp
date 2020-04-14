@@ -7,3 +7,7 @@ class TaskModelForm(forms.ModelForm):
 		model = Tasks
 		fields = ['user', 'title', 'need_hours', 'comments']
 
+class TaskCloseForm(forms.ModelForm):
+	class Meta:
+		model = Tasks
+		fields = ['closed',]

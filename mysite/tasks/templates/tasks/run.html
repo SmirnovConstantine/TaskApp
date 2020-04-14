@@ -3,15 +3,15 @@
 
 {% block content %}
 	{% for item in item_to_run %}
-		<p id="need_hours">{{ item.need_hours }}</p>
+		<div class="task-inform">
+			<div class="need_hours" style="display: none;">{{ item.need_hours }}</div>
+			<div class="task-title">Task - {{ item.title }}</div>
+			<div class="task-commets">Comments - {{ item.comments }}</div>
+		</div>
 	{% endfor %}
 
-	<h1 class="countdown-title">Countdown Clock</h1>
+	<h1 class="countdown-title">Deadline.</h1>
 <div id="countdown" class="countdown">
-  <div class="countdown-number">
-    <span class="days countdown-time"></span>
-    <span class="countdown-text">Days</span>
-  </div>
   <div class="countdown-number">
     <span class="hours countdown-time"></span>
     <span class="countdown-text">Hours</span>
@@ -25,6 +25,7 @@
     <span class="countdown-text">Seconds</span>
   </div>
 </div>
+
 
 {% block javacript %}<script src="{% static 'js/run.js' %}"></script>{% endblock %}
 

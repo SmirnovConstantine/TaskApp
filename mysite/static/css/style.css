@@ -420,8 +420,10 @@ select, input, textarea{
 }
 
 /* End task-form */
+
+/* Run task */
 .countdown-title {
-  color: #396;
+  color: #000029;
   font-weight: 100;
   font-size: 40px;
   margin: 40px 0px 20px;
@@ -439,14 +441,14 @@ select, input, textarea{
 .countdown-number {
   padding: 10px;
   border-radius: 3px;
-  background: #00bf96;
+  background: #646664;
   display: inline-block;
 }
 
 .countdown-time {
   padding: 15px;
   border-radius: 3px;
-  background: #00816a;
+  background: #044857;
   display: inline-block;
 }
 
@@ -455,6 +457,31 @@ select, input, textarea{
   padding-top: 5px;
   font-size: 16px;
 }
-/* Run task */
 
+.btn-close{
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
+.btn-close,  a{
+  color: white;
+  float: left;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.btn-close:hover{
+  background: #005c00;
+}
+
+.task-inform{
+  margin: 10px;
+  color: white;
+  font-size: 20px;
+}
 /* end run */

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+import time
 
 from .forms import CreateUserForm
 
@@ -36,6 +37,7 @@ def loginPage(request):
 
 			if user is not None:
 				login(request, user)
+				time.sleep(2)
 				return redirect('/')
 		else:
 			messages.info(request, 'username OR password is inccorect')
